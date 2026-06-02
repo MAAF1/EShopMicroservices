@@ -1,0 +1,6 @@
+version: '3.4'
+
+services:
+  catalogdb:
+    ports:
+      - "5433:5432"

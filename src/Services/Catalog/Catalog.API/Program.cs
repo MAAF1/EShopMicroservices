@@ -6,10 +6,13 @@ builder.Services.AddMediatR(config =>
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
 });
 
+var connString = builder.Configuration.GetConnectionString("Database");
+Console.WriteLine($"Connection String input: {connString}");
+
 builder.Services.AddMarten(opts =>
 {
     opts.Connection(builder.Configuration.GetConnectionString("Database")!);
-    
+
 }).UseLightweightSessions();
 
 // ---------------------------------------
