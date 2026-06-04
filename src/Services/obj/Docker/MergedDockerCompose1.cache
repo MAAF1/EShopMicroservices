@@ -1,5 +1,37 @@
-name: dockercompose12611141743926082507
+name: dockercompose7678751189468072717
 services:
+  catalog.api:
+    build:
+      context: D:\repos\EShopMicroservices\src
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ConnectionStrings__Database: Server=catalogdb;Port=5433;Database=CatalogDb;User Id=postgres;Password=postgres
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "6000"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "6060"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind: {}
   catalogdb:
     container_name: catalogdb
     environment:
@@ -12,7 +44,7 @@ services:
     ports:
       - mode: ingress
         target: 5432
-        published: "5432"
+        published: "5433"
         protocol: tcp
     restart: always
     volumes:
@@ -22,7 +54,7 @@ services:
         volume: {}
 networks:
   default:
-    name: dockercompose12611141743926082507_default
+    name: dockercompose7678751189468072717_default
 volumes:
   postgres_catalog:
-    name: dockercompose12611141743926082507_postgres_catalog
+    name: dockercompose7678751189468072717_postgres_catalog

@@ -1,4 +1,4 @@
-name: dockercompose12611141743926082507
+name: dockercompose7678751189468072717
 services:
   catalogdb:
     container_name: catalogdb
@@ -6,13 +6,13 @@ services:
       POSTGRES_DB: CatalogDb
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-    image: postgres:latest
+    image: postgres:17.2
     networks:
       default: null
     ports:
       - mode: ingress
         target: 5432
-        published: "5432"
+        published: "5433"
         protocol: tcp
     restart: always
     volumes:
@@ -22,7 +22,7 @@ services:
         volume: {}
 networks:
   default:
-    name: dockercompose12611141743926082507_default
+    name: dockercompose7678751189468072717_default
 volumes:
   postgres_catalog:
-    name: dockercompose12611141743926082507_postgres_catalog
+    name: dockercompose7678751189468072717_postgres_catalog
