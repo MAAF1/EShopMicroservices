@@ -1,8 +1,10 @@
 
+using Discount.Grpc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddCarter(); 
+builder.Services.AddCarter();
 var assembly = typeof(Program).Assembly;
 builder.Services.AddValidatorsFromAssembly(assembly);
 builder.Services.AddMediatR(config =>
@@ -23,6 +25,17 @@ builder.Services.AddMarten(opts =>
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
+
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
+{
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+})
+.ConfigurePrimaryHttpMessageHandler(() =>
+{
+    var handler = new HttpClientHandler { ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator };
+    return handler;
+});
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddStackExchangeRedisCache(options =>
 {
