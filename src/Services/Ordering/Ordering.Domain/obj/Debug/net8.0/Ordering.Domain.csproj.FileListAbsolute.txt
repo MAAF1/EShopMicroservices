@@ -1,0 +1,13 @@
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net8.0\Ordering.Domain.deps.json
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net8.0\Ordering.Domain.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net8.0\Ordering.Domain.pdb
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.csproj.AssemblyReference.cache
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.AssemblyInfoInputs.cache
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.AssemblyInfo.cs
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.csproj.CoreCompileInputs.cache
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.sourcelink.json
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\refint\Ordering.Domain.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\Ordering.Domain.pdb
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net8.0\ref\Ordering.Domain.dll
