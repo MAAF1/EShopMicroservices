@@ -243,3 +243,5 @@ E:\side_projects\EShopMicroservices\src\bin\Debug\zh-Hant\Microsoft.CodeAnalysis
 E:\side_projects\EShopMicroservices\src\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 E:\side_projects\EShopMicroservices\src\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 E:\side_projects\EShopMicroservices\src\obj\Debug\docker-c.35A3FFBA.Up2Date
+D:\repos\EShopMicroservices\src\bin\Debug\Grpc.Net.ClientFactory.dll
+D:\repos\EShopMicroservices\src\bin\Debug\Grpc.Net.Client.dll
