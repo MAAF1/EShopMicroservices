@@ -10,7 +10,7 @@ public class UpdateOrderHandler(IApplicationDbContext dbContext)
         var order = await dbContext.Orders
             .FindAsync([orderId], cancellationToken: cancellationToken);
 
-        if(order is null)
+        if (order is null)
         {
             throw new OrderNotFoundException(command.Order.Id);
         }
@@ -35,4 +35,4 @@ public class UpdateOrderHandler(IApplicationDbContext dbContext)
             status: orderDto.Status);
     }
 }
-}
+

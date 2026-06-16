@@ -1,23 +1,32 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
-namespace Ordering.API
+﻿using BuildingBlocks.Exceptions.Handler;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using System.Reflection;
+namespace Ordering.API;
+
+public static class DependencyInjection
 {
-    public static class DependencyInjection
+    public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
     {
-        public static IServiceCollection AddApiServices(this IServiceCollection services) 
+        services.AddMediatR(cfg =>
         {
-            services.AddMediatR(cfg => { 
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-            });
+            cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+        });
+        services.AddCarter();
+        services.AddExceptionHandler<CustomExceptionHandler>();
+        services.AddHealthChecks()
+            .AddSqlServer(configuration.GetConnectionString("Database")!);
+        return services;
+    }
 
-            return services;
-        }
-
-        public static WebApplication UseApiServices(this WebApplication app) 
+    public static WebApplication UseApiServices(this WebApplication app)
+    {
+        app.MapCarter();
+        app.UseExceptionHandler(options => { });
+        app.UseHealthChecks("/health", new HealthCheckOptions
         {
-            // app.MapCarter();
-
-            return app;
-        }
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+        return app;
     }
 }
