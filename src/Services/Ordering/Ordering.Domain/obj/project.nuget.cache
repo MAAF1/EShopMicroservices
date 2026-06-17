@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "36yuXWijp3M=",
+  "dgSpecHash": "hJaUIihhwGvYTL7mtdp9IOmwm436a5YEzmDoyUxVkwbjLuDoNUB7xr4Xsm4sl4fdyIIeJi/q1izfp2z5clTv+g==",
   "success": true,
-  "projectFilePath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
+  "projectFilePath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\maafm\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"
+    "C:\\Users\\Mabdulghani\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"
   ],
   "logs": []
 }

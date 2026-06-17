@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj": {}
+    "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj": {}
   },
   "projects": {
-    "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+    "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks.Messaging\\BuildingBlocks.Messaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
-        "projectName": "BuildingBlocks",
-        "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
-        "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-        "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks.Messaging\\BuildingBlocks.Messaging.csproj",
+        "projectName": "BuildingBlocks.Messaging",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks.Messaging\\BuildingBlocks.Messaging.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks.Messaging\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,7 +26,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -39,17 +34,71 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.5.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectName": "BuildingBlocks",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
             "Carter": {
@@ -75,6 +124,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[14.1.0, )"
+            },
+            "Microsoft.FeatureManagement.AspNetCore": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             }
           },
           "imports": [
@@ -93,25 +146,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
+    "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
         "projectName": "Ordering.Application",
-        "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
-        "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-        "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\obj\\",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,14 +172,16 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
-                "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+              "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks.Messaging\\BuildingBlocks.Messaging.csproj": {
+                "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks.Messaging\\BuildingBlocks.Messaging.csproj"
               },
-              "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj": {
-                "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj"
+              "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+                "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+              },
+              "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj": {
+                "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj"
               }
             }
           }
@@ -139,17 +190,10 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
@@ -173,25 +217,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj": {
+    "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
         "projectName": "Ordering.Domain",
-        "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
-        "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-        "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\obj\\",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -203,7 +243,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -212,17 +251,10 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "MediatR": {
@@ -246,25 +278,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj": {
+    "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
         "projectName": "Ordering.Infrastructure",
-        "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-        "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\obj\\",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -276,11 +304,10 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
-                "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
+              "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
+                "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
               }
             }
           }
@@ -289,17 +316,10 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
@@ -333,7 +353,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

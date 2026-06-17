@@ -1,16 +1,16 @@
-name: dockercompose6253496274741858917
+name: dockercompose9396327881307459103
 services:
   basket.api:
     build:
-      context: E:\side_projects\EShopMicroservices\src
+      context: D:\repos\EShopMicroservices\src
       dockerfile: Services/Basket/Basket.API/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
-        LAUNCHING_FROM_VS: "true"
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: Basket.API
       target: base
+    container_name: Basket.API
     depends_on:
       basketdb:
         condition: service_started
@@ -22,11 +22,9 @@ services:
         condition: service_started
         required: true
     entrypoint:
-      - dotnet
-      - --roll-forward
-      - Major
-      - /VSTools/DistrolessHelper/DistrolessHelper.dll
-      - --wait
+      - tail
+      - -f
+      - /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
@@ -36,11 +34,11 @@ services:
       ConnectionStrings__Redis: distributedcache:6379
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
       GrpcSettings__DiscountUrl: https://discount.grpc:8081
-      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
+      NUGET_FALLBACK_PACKAGES: ""
     image: basketapi:dev
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/bin/Debug/net8.0/Basket.API.dll"'
-      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/bin/Debug/net8.0/Basket.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
@@ -57,54 +55,54 @@ services:
     tty: true
     volumes:
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: E:\side_projects\EShopMicroservices\src\Services\Basket\Basket.API
+        source: D:\repos\EShopMicroservices\src\Services\Basket\Basket.API
         target: /app
         bind: {}
       - type: bind
-        source: E:\side_projects\EShopMicroservices\src
+        source: D:\repos\EShopMicroservices\src
         target: /src
         bind: {}
       - type: bind
-        source: C:\Users\maafm\vsdbg\vs2017u5
+        source: C:\Users\Mabdulghani\vsdbg\vs2017u5
         target: /remote_debugger
         bind: {}
       - type: bind
-        source: C:\Users\maafm\.nuget\packages
+        source: C:\Users\Mabdulghani\.nuget\packages\
         target: /.nuget/packages
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
-        target: /.nuget/fallbackpackages
-        read_only: true
-        bind: {}
-      - type: bind
-        source: C:\Users\maafm\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /root/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
-        target: /VSTools
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0
+        target: /TokenService.Proxy
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\extensions\Microsoft\managedprojectsystem\HotReload
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net6.0
+        target: /HotReloadProxy
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\HotReload
         target: /HotReloadAgent
         read_only: true
         bind: {}
@@ -130,21 +128,19 @@ services:
         volume: {}
   catalog.api:
     build:
-      context: E:\side_projects\EShopMicroservices\src
+      context: D:\repos\EShopMicroservices\src
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
-        LAUNCHING_FROM_VS: "true"
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: Catalog.API
       target: base
+    container_name: Catalog.API
     entrypoint:
-      - dotnet
-      - --roll-forward
-      - Major
-      - /VSTools/DistrolessHelper/DistrolessHelper.dll
-      - --wait
+      - tail
+      - -f
+      - /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
@@ -152,11 +148,11 @@ services:
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ConnectionStrings__Database: Server=catalogdb;Port=5432;Database=CatalogDb;User Id=postgres;Password=postgres
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
-      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
+      NUGET_FALLBACK_PACKAGES: ""
     image: catalogapi:dev
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/bin/Debug/net8.0/Catalog.API.dll"'
-      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/bin/Debug/net8.0/Catalog.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
@@ -173,54 +169,54 @@ services:
     tty: true
     volumes:
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: E:\side_projects\EShopMicroservices\src\Services\Catalog\Catalog.API
+        source: D:\repos\EShopMicroservices\src\Services\Catalog\Catalog.API
         target: /app
         bind: {}
       - type: bind
-        source: E:\side_projects\EShopMicroservices\src
+        source: D:\repos\EShopMicroservices\src
         target: /src
         bind: {}
       - type: bind
-        source: C:\Users\maafm\vsdbg\vs2017u5
+        source: C:\Users\Mabdulghani\vsdbg\vs2017u5
         target: /remote_debugger
         bind: {}
       - type: bind
-        source: C:\Users\maafm\.nuget\packages
+        source: C:\Users\Mabdulghani\.nuget\packages\
         target: /.nuget/packages
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
-        target: /.nuget/fallbackpackages
-        read_only: true
-        bind: {}
-      - type: bind
-        source: C:\Users\maafm\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /root/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
-        target: /VSTools
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0
+        target: /TokenService.Proxy
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\extensions\Microsoft\managedprojectsystem\HotReload
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net6.0
+        target: /HotReloadProxy
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\HotReload
         target: /HotReloadAgent
         read_only: true
         bind: {}
@@ -246,21 +242,19 @@ services:
         volume: {}
   discount.grpc:
     build:
-      context: E:\side_projects\EShopMicroservices\src
+      context: D:\repos\EShopMicroservices\src
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
-        LAUNCHING_FROM_VS: "true"
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: Discount.Grpc
       target: base
+    container_name: Discount.Grpc
     entrypoint:
-      - dotnet
-      - --roll-forward
-      - Major
-      - /VSTools/DistrolessHelper/DistrolessHelper.dll
-      - --wait
+      - tail
+      - -f
+      - /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
@@ -268,11 +262,11 @@ services:
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ConnectionStrings__Database: Data Source=discountdb
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
-      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
+      NUGET_FALLBACK_PACKAGES: ""
     image: discountgrpc:dev
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/bin/Debug/net8.0/Discount.Grpc.dll"'
-      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/bin/Debug/net8.0/Discount.Grpc.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
@@ -289,54 +283,54 @@ services:
     tty: true
     volumes:
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: E:\side_projects\EShopMicroservices\src\Services\Discount\Discount.Grpc
+        source: D:\repos\EShopMicroservices\src\Services\Discount\Discount.Grpc
         target: /app
         bind: {}
       - type: bind
-        source: E:\side_projects\EShopMicroservices\src
+        source: D:\repos\EShopMicroservices\src
         target: /src
         bind: {}
       - type: bind
-        source: C:\Users\maafm\vsdbg\vs2017u5
+        source: C:\Users\Mabdulghani\vsdbg\vs2017u5
         target: /remote_debugger
         bind: {}
       - type: bind
-        source: C:\Users\maafm\.nuget\packages
+        source: C:\Users\Mabdulghani\.nuget\packages\
         target: /.nuget/packages
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
-        target: /.nuget/fallbackpackages
-        read_only: true
-        bind: {}
-      - type: bind
-        source: C:\Users\maafm\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /root/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
-        target: /VSTools
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0
+        target: /TokenService.Proxy
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\extensions\Microsoft\managedprojectsystem\HotReload
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net6.0
+        target: /HotReloadProxy
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\HotReload
         target: /HotReloadAgent
         read_only: true
         bind: {}
@@ -351,11 +345,44 @@ services:
         published: "6379"
         protocol: tcp
     restart: always
+  messagebroker:
+    container_name: messagebroker
+    environment:
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+    hostname: ecommerce-mq
+    image: rabbitmq:management
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+    restart: always
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: SwN12345678
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+    restart: always
 networks:
   default:
-    name: dockercompose6253496274741858917_default
+    name: dockercompose9396327881307459103_default
 volumes:
   postgres_basket:
-    name: dockercompose6253496274741858917_postgres_basket
+    name: dockercompose9396327881307459103_postgres_basket
   postgres_catalog:
-    name: dockercompose6253496274741858917_postgres_catalog
+    name: dockercompose9396327881307459103_postgres_catalog

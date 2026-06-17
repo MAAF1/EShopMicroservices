@@ -22,7 +22,7 @@ services:
   basketdb:
     container_name: basketdb
     ports:
-        - "5433:5432"
+      - "5433:5432"
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -39,7 +39,18 @@ services:
     restart: always
     ports: 
       - "1433:1433"
-   
+  
+  messagebroker:
+    container_name: messagebroker
+    hostname: ecommerce-mq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest 
+      - RABBITMQ_DEFAULT_PASS=guest 
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672" 
+  
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj": {}
+    "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj": {}
   },
   "projects": {
-    "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+    "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
         "projectName": "BuildingBlocks",
-        "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
-        "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-        "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,7 +26,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -39,17 +34,10 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Carter": {
@@ -75,6 +63,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[14.1.0, )"
+            },
+            "Microsoft.FeatureManagement.AspNetCore": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             }
           },
           "imports": [
@@ -93,25 +85,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj": {
+    "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+        "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
         "projectName": "Catalog.API",
-        "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
-        "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-        "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\obj\\",
+        "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+        "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,11 +111,10 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
-                "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+              "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+                "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
               }
             }
           }
@@ -136,17 +123,10 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AspNetCore.HealthChecks.NpgSql": {
@@ -189,7 +169,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

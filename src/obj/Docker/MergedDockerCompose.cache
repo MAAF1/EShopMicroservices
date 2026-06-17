@@ -1,8 +1,8 @@
-name: dockercompose6253496274741858917
+name: dockercompose9396327881307459103
 services:
   basket.api:
     build:
-      context: E:\side_projects\EShopMicroservices\src
+      context: D:\repos\EShopMicroservices\src
       dockerfile: Services/Basket/Basket.API/Dockerfile
     depends_on:
       basketdb:
@@ -35,12 +35,12 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind: {}
@@ -66,7 +66,7 @@ services:
         volume: {}
   catalog.api:
     build:
-      context: E:\side_projects\EShopMicroservices\src
+      context: D:\repos\EShopMicroservices\src
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -87,12 +87,12 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind: {}
@@ -118,7 +118,7 @@ services:
         volume: {}
   discount.grpc:
     build:
-      context: E:\side_projects\EShopMicroservices\src
+      context: D:\repos\EShopMicroservices\src
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -139,12 +139,12 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\Mabdulghani\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\maafm\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\Mabdulghani\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind: {}
@@ -159,11 +159,44 @@ services:
         published: "6379"
         protocol: tcp
     restart: always
+  messagebroker:
+    container_name: messagebroker
+    environment:
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+    hostname: ecommerce-mq
+    image: rabbitmq:management
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+    restart: always
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: SwN12345678
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+    restart: always
 networks:
   default:
-    name: dockercompose6253496274741858917_default
+    name: dockercompose9396327881307459103_default
 volumes:
   postgres_basket:
-    name: dockercompose6253496274741858917_postgres_basket
+    name: dockercompose9396327881307459103_postgres_basket
   postgres_catalog:
-    name: dockercompose6253496274741858917_postgres_catalog
+    name: dockercompose9396327881307459103_postgres_catalog

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net8.0": {
       "AspNetCore.HealthChecks.NpgSql/8.0.0": {
@@ -911,6 +911,48 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Caching.Memory/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Options": "8.0.2",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1553,6 +1595,46 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.FeatureManagement/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.TimeProvider": "8.0.1",
+          "Microsoft.Extensions.Caching.Memory": "8.0.1",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+          "Microsoft.Extensions.Logging": "8.0.1",
+          "System.Diagnostics.DiagnosticSource": "8.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.FeatureManagement.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.FeatureManagement.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.FeatureManagement.AspNetCore/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FeatureManagement": "4.5.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FeatureManagement.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FeatureManagement.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.IdentityModel.Abstractions/8.14.0": {
         "type": "package",
         "compile": {
@@ -2151,7 +2233,8 @@
           "FluentValidation.AspNetCore": "11.3.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "Mapster": "10.0.7",
-          "MediatR": "14.1.0"
+          "MediatR": "14.1.0",
+          "Microsoft.FeatureManagement.AspNetCore": "4.5.0"
         },
         "compile": {
           "bin/placeholder/BuildingBlocks.dll": {}
@@ -3862,6 +3945,66 @@
         "version.txt"
       ]
     },
+    "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
+      "sha512": "3KuSxeHoNYdxVYfg2IRZCThcrlJ1XJqIXkAWikCsbm5C/bCjv7G0WoKDyuR98Q+T607QT2Zl5GsbGRkENcV2yQ==",
+      "type": "package",
+      "path": "microsoft.extensions.caching.abstractions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Caching.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Caching.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.caching.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Caching.Memory/8.0.1": {
+      "sha512": "HFDnhYLccngrzyGgHkjEDU5FMLn4MpOsr5ElgsBMC4yx6lJh4jeWO7fHS8+TXPq+dgxCmUa/Trl8svObmwW4QA==",
+      "type": "package",
+      "path": "microsoft.extensions.caching.memory/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Caching.Memory.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Caching.Memory.targets",
+        "lib/net462/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net462/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net6.0/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net7.0/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net8.0/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.xml",
+        "microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",
+        "microsoft.extensions.caching.memory.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.Configuration/8.0.0": {
       "sha512": "0J/9YNXTMWSZP2p2+nvl8p71zpSwokZXZuJW+VjdErkegAnFdO1XlqtA62SJtgVYHdKu3uPxJHcMR/r35HwFBA==",
       "type": "package",
@@ -4835,6 +4978,36 @@
         "microsoft.extensions.primitives.8.0.0.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.FeatureManagement/4.5.0": {
+      "sha512": "9VBxTZUwna9x31+OmOyX0DTBGEuvVrV81fAZ/XRkLESuDu5EZn/o6W8454NWOPHBIUyTGTMpYOFzI8ArkCNmCg==",
+      "type": "package",
+      "path": "microsoft.featuremanagement/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.FeatureManagement.dll",
+        "lib/netstandard2.0/Microsoft.FeatureManagement.xml",
+        "lib/netstandard2.1/Microsoft.FeatureManagement.dll",
+        "lib/netstandard2.1/Microsoft.FeatureManagement.xml",
+        "microsoft.featuremanagement.4.5.0.nupkg.sha512",
+        "microsoft.featuremanagement.nuspec"
+      ]
+    },
+    "Microsoft.FeatureManagement.AspNetCore/4.5.0": {
+      "sha512": "CafI8Ne0xuXRNzHMoRGAX4WRvLxpTE7RceBncgME/fRcPD2KwYrxfZpLyJ/kVfYt8uvHkC2xy0VlStj687mVoA==",
+      "type": "package",
+      "path": "microsoft.featuremanagement.aspnetcore/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/Microsoft.FeatureManagement.AspNetCore.dll",
+        "lib/net8.0/Microsoft.FeatureManagement.AspNetCore.xml",
+        "lib/net9.0/Microsoft.FeatureManagement.AspNetCore.dll",
+        "lib/net9.0/Microsoft.FeatureManagement.AspNetCore.xml",
+        "microsoft.featuremanagement.aspnetcore.4.5.0.nupkg.sha512",
+        "microsoft.featuremanagement.aspnetcore.nuspec"
       ]
     },
     "Microsoft.IdentityModel.Abstractions/8.14.0": {
@@ -5910,24 +6083,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maafm\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Mabdulghani\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+      "projectUniqueName": "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
       "projectName": "Catalog.API",
-      "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
-      "packagesPath": "C:\\Users\\maafm\\.nuget\\packages\\",
-      "outputPath": "E:\\side_projects\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\obj\\",
+      "projectPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+      "packagesPath": "C:\\Users\\Mabdulghani\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\EShopMicroservices\\src\\Services\\Catalog\\Catalog.API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\maafm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Mabdulghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5939,11 +6107,10 @@
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
-              "projectPath": "E:\\side_projects\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+            "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+              "projectPath": "D:\\repos\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
             }
           }
         }
@@ -5952,17 +6119,10 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "10.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": {
@@ -6005,7 +6165,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.118/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
