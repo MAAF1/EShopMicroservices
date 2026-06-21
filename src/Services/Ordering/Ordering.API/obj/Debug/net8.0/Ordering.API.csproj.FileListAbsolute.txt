@@ -159,3 +159,16 @@ E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\obj\Debug
 E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\obj\Debug\net8.0\Ordering.API.genruntimeconfig.cache
 E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\obj\Debug\net8.0\ref\Ordering.API.dll
 E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\obj\Debug\net8.0\Ordering.API.MvcApplicationPartsAssemblyInfo.cs
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\HealthChecks.SqlServer.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\HealthChecks.UI.Client.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\HealthChecks.UI.Core.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\MassTransit.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\MassTransit.Abstractions.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\Microsoft.FeatureManagement.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\Microsoft.FeatureManagement.AspNetCore.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\RabbitMQ.Client.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\BuildingBlocks.Messaging.dll
+E:\side_projects\EShopMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net8.0\BuildingBlocks.Messaging.pdb

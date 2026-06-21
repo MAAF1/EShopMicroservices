@@ -310,3 +310,7 @@ D:\repos\EShopMicroservices\src\Services\Discount\Discount.Grpc\obj\Debug\net8.0
 D:\repos\EShopMicroservices\src\Services\Discount\Discount.Grpc\obj\Debug\net8.0\Discount.Grpc.pdb
 D:\repos\EShopMicroservices\src\Services\Discount\Discount.Grpc\obj\Debug\net8.0\Discount.Grpc.genruntimeconfig.cache
 D:\repos\EShopMicroservices\src\Services\Discount\Discount.Grpc\obj\Debug\net8.0\ref\Discount.Grpc.dll
+E:\side_projects\EShopMicroservices\src\Services\Discount\Discount.Grpc\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+E:\side_projects\EShopMicroservices\src\Services\Discount\Discount.Grpc\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+E:\side_projects\EShopMicroservices\src\Services\Discount\Discount.Grpc\bin\Debug\net8.0\Microsoft.FeatureManagement.dll
+E:\side_projects\EShopMicroservices\src\Services\Discount\Discount.Grpc\bin\Debug\net8.0\Microsoft.FeatureManagement.AspNetCore.dll
