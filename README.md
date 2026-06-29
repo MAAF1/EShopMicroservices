@@ -44,7 +44,8 @@ EShop Microservices splits an online-shop backend into small, independently depl
 ​
 ## 🏗 Architecture
 ​
-```mermaid
+```
+mermaid
 flowchart TB
     Client([Client])
     GW["YARP API Gateway"]
